@@ -21,15 +21,15 @@ const Index = ({setIsNextPage, setDressInfo}) => {
   }
 
   return (
-    <div className='flex flex-col w-[500px] bg-white py-6 px-12 rounded-xl'>
+    <div className='flex flex-col w-[500px] bg-white py-6 px-12 rounded-xl max-sm:w-full max-sm:px-6'>
       <h1 className='text-slate-900 text-4xl font-["Blacker"] mx-auto mt-6 mb-3'>
         Escolha o seu vestido favorito!
       </h1>
       <p className='text-gray-500'>Com qual você ficaria mais bonita?</p>
-      <div className=' flex flex-wrap w-full gap-2 justify-between my-8'>
+      <div className=' flex flex-wrap w-full gap-2 justify-between my-8  max-sm:overflow-y-scroll max-sm:h-[250px] max-sm:gap-4'>
         {
           dresses.map((item, index) => 
-            <div key={index} style={{ backgroundImage: `url(${item.img})` }} className='flex flex-row items-end w-[49%] h-36 bg-cover bg-center' >
+            <div key={index} style={{ backgroundImage: `url(${item.img})` }} className='flex flex-row items-end w-[49%] h-36 bg-cover bg-center max-sm:w-full' >
               <label htmlFor={item.id} className='w-[80%] h-[40px] p-2 bg-white/70 text-sm'>
                 <input
                   id={item.id}

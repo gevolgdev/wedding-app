@@ -22,7 +22,7 @@ const IndexPage = () => {
 
   // }
 
-  const styleDiv = 'flex flex-col items-center justify-center w-full h-screen'
+  const styleDiv = 'flex flex-col items-center justify-center w-full h-screen max-sm:px-6'
 
   if (isNextPage === 2) {
     return (

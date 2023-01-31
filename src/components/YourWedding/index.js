@@ -2,7 +2,7 @@ import React from 'react'
 
 const Index = ({weddingInfos}) => {
   return (
-    <div className='flex flex-col w-[440px] bg-white py-6 px-12 rounded-xl'>
+    <div className='flex flex-col w-[440px] bg-white py-6 px-12 rounded-xl max-sm:w-full'>
       <h1 className='text-slate-900 text-4xl font-["Blacker"] mx-auto mt-6'>
         Como ficou seu <span className='text-rose-500'>casamento</span>:
       </h1>

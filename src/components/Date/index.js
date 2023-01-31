@@ -13,7 +13,7 @@ const Index = ({setIsNextPage, setDateInfo}) => {
 
 
   return (
-    <div className='flex flex-col w-[440px] h-[500px] bg-white py-8 px-12 rounded-xl'>
+    <div className='flex flex-col w-[440px] h-[500px] bg-white py-8 px-12 rounded-xl max-sm:w-full max-sm:px-8'>
       <h1 className='text-slate-900 text-4xl font-["Blacker"] mt-6 mb-3'>
         Qual será a data?
       </h1>

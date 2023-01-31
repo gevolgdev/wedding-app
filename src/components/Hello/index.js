@@ -8,7 +8,7 @@ const index = ({setIsNextPage}) => {
   const NEXT_PAGE = () => setIsNextPage(2)
 
   return (
-    <div className='flex flex-col items-center w-[440px] bg-white py-6 px-12 rounded-xl'>
+    <div className='flex flex-col items-center w-[440px] bg-white py-6 px-12 rounded-xl max-sm:w-full max-sm:px-7'>
       <img src={Img} alt='' className='w-[200px]'/>
       <h1 className='text-slate-900 text-4xl font-["Blacker"] mx-auto mt-6 mb-3'>
         Deixe seu casamento do seu jeitinho!

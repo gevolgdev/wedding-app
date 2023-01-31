@@ -29,11 +29,11 @@ const Index = ({setIsNextPage, setLocalInfo}) => {
   }
 
   return (
-    <div className='flex flex-col w-[440px] h-[500px] bg-white py-8 px-12 rounded-xl'>
+    <div className='flex flex-col w-[440px] h-[500px] bg-white py-8 px-12 rounded-xl max-sm:w-full max-sm:px-6'>
       <h1 className='text-slate-900 text-4xl font-["Blacker"] mt-6 mb-3'>
         Onde desejá comemorar?
       </h1>
-      <p className='text-gray-500 mb-6'>Nos informe a data do evento. Coloque o dia, mês e ano!</p>
+      <p className='text-gray-500 mb-6'>Diga o lugar que você ache mais bonito.</p>
 
       <div className="flex flex-col gap-5 h-full w-full mb-5 p-2 overflow-y-scroll container">
         {
