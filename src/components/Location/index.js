@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 //Images
 
-const Index = ({setIsNextPage}) => {
+const Index = ({setIsNextPage, setLocalInfo}) => {
 
  const NEXT_PAGE = () => setIsNextPage(4)
  const BACK_PAGE = () => setIsNextPage(2)
@@ -24,6 +24,10 @@ const Index = ({setIsNextPage}) => {
     },
   ]
 
+  function handleName(index, name) {
+    setLocalInfo(name)
+  }
+
   return (
     <div className='flex flex-col w-[440px] h-[500px] bg-white py-8 px-12 rounded-xl'>
       <h1 className='text-slate-900 text-4xl font-["Blacker"] mt-6 mb-3'>
@@ -33,9 +37,14 @@ const Index = ({setIsNextPage}) => {
 
       <div className="flex flex-col gap-5 h-full w-full mb-5 p-2 overflow-y-scroll container">
         {
-          locals.map((item) =>
-            <label for={item.city} className="flex flex-row items-center w-full px-5 border-2 border-gray-400 active:bg-rose-100">
-              <input type='radio' id={item.city} name='locals' /> 
+          locals.map((item, index) =>
+            <label key={item.name} htmlFor={item.city} className="flex flex-row items-center w-full px-5 border-2 border-gray-400 active:bg-rose-100">
+              <input
+                onChange={() => handleName(index, item.name)}
+                type='radio'
+                id={item.city}
+                name='locals'
+              /> 
               <div className='flex flex-col p-5'>
                 <h3 className='text-lg font-bold text-gray-800'>{item.name}</h3>
                 <p className='text-sm'>{item.description}</p>

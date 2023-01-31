@@ -5,33 +5,20 @@ import IMG2 from '../../assets/images/imgDress2.png'
 import IMG3 from '../../assets/images/imgDress3.png'
 import IMG4 from '../../assets/images/imgDress4.png'
 
-const Index = ({setIsNextPage}) => {
+const Index = ({setIsNextPage, setDressInfo}) => {
 
   const NEXT_PAGE = () => setIsNextPage(5)
-  const BACK_PAGE = () => setIsNextPage(3)
 
   const dresses = [
-    {
-      id: 'vestido1',
-      img: IMG1,
-      pick: ' Escolher'
-    },
-    {
-      id: 'vestido2',
-      img: IMG2,
-      pick: ' Escolher'
-    },
-    {
-      id: 'vestido3',
-      img: IMG3,
-      pick: ' Escolher'
-    },
-    {
-      id: 'vestido4',
-      img: IMG4,
-      pick: ' Escolher'
-    },
+    { id: 'vestido1', img: IMG1, pick: ' Escolher', number: '1'},
+    { id: 'vestido2', img: IMG2, pick: ' Escolher', number: '2'},
+    { id: 'vestido3', img: IMG3, pick: ' Escolher', number: '3'},
+    { id: 'vestido4', img: IMG4, pick: ' Escolher', number: '4'},
   ]
+
+  function handleDress(index, number) {
+    setDressInfo(number)
+  }
 
   return (
     <div className='flex flex-col w-[500px] bg-white py-6 px-12 rounded-xl'>
@@ -41,16 +28,20 @@ const Index = ({setIsNextPage}) => {
       <p className='text-gray-500'>Com qual você ficaria mais bonita?</p>
       <div className=' flex flex-wrap w-full gap-2 justify-between my-8'>
         {
-          dresses.map((item) => 
-            <div style={{ backgroundImage: `url(${item.img})` }} className='flex flex-col justify-end w-[49%] h-36 bg-cover bg-center' >
-              <label for={item.id} className='w-full p-2 bg-white/70 text-sm'>
+          dresses.map((item, index) => 
+            <div key={index} style={{ backgroundImage: `url(${item.img})` }} className='flex flex-row items-end w-[49%] h-36 bg-cover bg-center' >
+              <label htmlFor={item.id} className='w-[80%] h-[40px] p-2 bg-white/70 text-sm'>
                 <input
                   id={item.id}
                   type='radio'
                   name='dresses'
+                  onChange={() => handleDress(index, item.number)}
                 />
                 {item.pick}
               </label>
+              <div className='flex items-center justify-center w-[20%] h-[40px] bg-rose-300 text-gray-900'>
+                {item.number}
+              </div>
             </div>
           )
         }
